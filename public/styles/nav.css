@@ -1,0 +1,18 @@
+nav { 
+  font-family: 'Candal', sans-serif;
+  font-size: 2em;
+  color: lavender ;
+  height: 100px;
+  background-color: rgb(65, 133, 189);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0%;
+  z-index: 10;
+}
+
+.nav {
+  position: fixed;
+  top: 15px;
+  left: 1em;
+
+}

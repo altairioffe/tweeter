@@ -1,0 +1,83 @@
+.tweet-container {
+  position: relative;
+  width: 80%;
+  left: 10%;
+  height: 2000px;
+  top: 100px;
+}
+
+
+.tweet {
+  display: inline-block;
+  width: 100%;
+  height: 240px;
+  margin-top: 20px;
+  border: 4px;
+  border-style: dotted;
+  margin-bottom: 20px;
+}
+
+.tweet header {
+position: relative;
+top: 0px;
+height: 120px;
+}
+
+.tweet img {
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin-top: 5px;
+}
+
+.display-name {
+  float: left;
+  margin-top: 30px;
+}
+
+.display-handle {
+  display: inline-block;
+  position: absolute;
+  margin-top: 40px;
+  right: 20px; 
+}
+
+
+.tweet-content p{
+  width: 100%;
+  height: 2em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: white;
+  position: relative;
+  left: 0%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.tweet footer {
+  position: relative;
+  bottom: 0em;
+  height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px
+}
+
+.tweet footer i {
+float: right;
+margin-right: 20px;
+}
+
+.tweet footer p {
+  float: left;
+  width: 300px;
+  margin: 0px;
+}
+
+article {
+  height: 240px;
+}

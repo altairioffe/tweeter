@@ -1,0 +1,16 @@
+header {
+text-align: center;
+background-color: rgb(237, 240, 30);
+height: 350px;
+padding-bottom: 0;
+}
+
+#avatar {
+transform: scale(0.8);
+padding-top: 1em;
+}
+
+#avatar-name {
+color: black;
+margin-top: -2em;
+}
