@@ -38,7 +38,6 @@ const createTweetElement = function(tweetObj) {
 </footer>
 </article>
 `;
-
   return $markup;
 };
 
@@ -91,5 +90,12 @@ $(document).ready(() => {
       .then((result) => renderTweets(result))
   }
   loadTweets();
+
+  $('section.new-tweet').hide();
+
+  $('#toggleTweet').click(function(){
+    $('section.new-tweet').slideToggle();
+    $('#text-input').focus();
+  })
 
 })

@@ -16,3 +16,11 @@ nav {
   left: 1em;
 
 }
+
+nav button {
+  float: right;
+  height: 60px;
+  margin: 20px;
+  font-size: 0.5em;
+  border-radius: 10px;
+}
