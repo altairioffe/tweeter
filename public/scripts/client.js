@@ -76,10 +76,10 @@ $(document).ready(() => {
       return
     }
     if ($('#text-input').val().length > 140) {
-      $('.new-tweet h2').text('TOO MANY CHARACTERS');
+      $('.new-tweet h2').text('TOO MANY CHARACTERS').css("color", "red");
 
       $('#text-input').click(function() {
-        $('.new-tweet h2').text('Compose Tweet');
+        $('.new-tweet h2').text('Compose Tweet').css("color", "lavender");
       })
       return 
     }

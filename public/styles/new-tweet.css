@@ -1,5 +1,7 @@
-.new-tweet h2 {margin-left: 20px;
-margin-bottom: 0px;
+.new-tweet h2 {
+padding-left: 10px;
+color: lavender;
+margin: 10px;
 }
 
 .new-tweet {
@@ -12,6 +14,7 @@ margin-bottom: 0px;
   width: 90%;
   margin-left: 5%;
   z-index: 1;
+  padding-top: 5px;
 }
 
 .new-tweet p {
@@ -23,7 +26,7 @@ margin-bottom: 0px;
 }
 
 #form-title{
-margin-top: 0.5em;
+margin-top: 0.8em;
 padding-top: 0.5em;
 padding-left: 0.5em;
 
