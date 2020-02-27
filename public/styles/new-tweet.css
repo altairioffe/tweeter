@@ -1,9 +1,9 @@
 .new-tweet h2 {margin-left: 20px;
-
+margin-bottom: 0px;
 }
 
 .new-tweet {
-  height: 150px;
+  height: 160px;
   border-radius: 20px;
   background-color: chocolate;
   position: -webkit-sticky;
@@ -12,6 +12,14 @@
   width: 90%;
   margin-left: 5%;
   z-index: 1;
+}
+
+.new-tweet p {
+  font-size: 0.5em;
+  color: white;
+  float: left;
+  bottom: 50px;
+  margin: 0px;
 }
 
 #form-title{

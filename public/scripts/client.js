@@ -12,7 +12,7 @@ const escape = function(str) {
 
 const createTweetElement = function(tweetObj) {
   const displayName = escape(tweetObj.user.name);
-  const avatar = escape(tweetObj.user.avatar);
+  const avatar = tweetObj.user.avatar;
   const handle = escape(tweetObj.user.handle);
   const content = escape(tweetObj.content.text);
   const time = tweetObj.created_at;
@@ -73,11 +73,15 @@ $(document).ready(() => {
       $('#text-input').click(function() {
         $('#text-input').attr('placeholder', 'What are you humming about?')
       })
-      //alert('WRITE SOMETHING');
       return
     }
     if ($('#text-input').val().length > 140) {
-      return alert('TOO MANY CHARACTERS');
+      $('.new-tweet h2').text('TOO MANY CHARACTERS');
+
+      $('#text-input').click(function() {
+        $('.new-tweet h2').text('Compose Tweet');
+      })
+      return 
     }
 
     let $textInput = $('#text-input').serialize();
