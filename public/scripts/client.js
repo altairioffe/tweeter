@@ -11,9 +11,9 @@ const escape = function(str) {
 };
 
 const createTweetElement = function(tweetObj) {
-  const displayName = tweetObj.user.name;
-  const avatar = tweetObj.user.avatar;
-  const handle = tweetObj.user.handle;
+  const displayName = escape(tweetObj.user.name);
+  const avatar = escape(tweetObj.user.avatar);
+  const handle = escape(tweetObj.user.handle);
   const content = escape(tweetObj.content.text);
   const time = tweetObj.created_at;
 
