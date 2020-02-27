@@ -68,7 +68,13 @@ $(document).ready(() => {
     event.preventDefault();
 
     if ($('#text-input').val().length === 0) {
-      return alert('WRITE SOMETHING');
+       
+      $('#text-input').attr('placeholder', 'WRITE SOMETHING');
+      $('#text-input').click(function() {
+        $('#text-input').attr('placeholder', 'What are you humming about?')
+      })
+      //alert('WRITE SOMETHING');
+      return
     }
     if ($('#text-input').val().length > 140) {
       return alert('TOO MANY CHARACTERS');
@@ -82,6 +88,7 @@ $(document).ready(() => {
       data: $textInput,
     })
       .then(loadTweets())
+      .then($('#text-input').val(''));
 
   })
 
