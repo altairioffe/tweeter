@@ -4,12 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Escape function for user input
 const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+// Creates a new tweet
 const createTweetElement = function(tweetObj) {
   console.log(tweetObj)
   const displayName = escape(tweetObj.user.name);
@@ -17,9 +19,9 @@ const createTweetElement = function(tweetObj) {
   const handle = escape(tweetObj.user.handle);
   const content = escape(tweetObj.content.text);
   const time = tweetObj.created_at;
-  const convertedDate = new Date(time)
 
-  let $markup = ` <article class="tweet">
+  let $markup = `
+<article class="tweet">
 <header>
   <img src="${avatar}">
   <h3 class="display-name">${displayName}</h3>
@@ -44,42 +46,30 @@ const createTweetElement = function(tweetObj) {
 };
 
 const renderTweets = function(tweetsArray) {
-  for (let tweet of tweetsArray) {
 
+  for (let tweet of tweetsArray) {
     const $tweet = createTweetElement(tweet);
-    // console.log($tweet);
     $('.tweet-container').prepend($tweet);
   }
 };
-
-// const addShadow = function() {
-//   const $tweetBox = $('.tweet');
-
-//   $tweetBox.on('mouseover', function() {
-//     $(this).css('box-shadow', '10px 10px')
-//   })
-
-//   $tweetBox.on('mouseleave', function() {
-//     $(this).css('box-shadow', 'none');
-//   })
-// }
-
 
 $(document).ready(() => {
 
   const $submitTweet = $('.submit-tweet');
 
   $submitTweet.click(function(event) {
+
     event.preventDefault();
 
+// ERROR Message for empty tweet:
     if ($('#text-input').val().length === 0) {
-
       $('#text-input').attr('placeholder', 'WRITE SOMETHING');
       $('#text-input').click(function() {
         $('#text-input').attr('placeholder', 'What are you humming about?')
       })
       return
     }
+// ERROR Message for long tweet:
     if ($('#text-input').val().length > 140) {
       $('.new-tweet h2').text('TOO MANY CHARACTERS').css("color", "red");
 
@@ -89,6 +79,7 @@ $(document).ready(() => {
       return
     }
 
+    // POSTS new tweet & resets input form:
     let $textInput = $('#text-input').serialize();
 
     $.ajax({
@@ -109,8 +100,8 @@ $(document).ready(() => {
   }
   loadTweets();
 
+  //Toggles input form:
   $('section.new-tweet').hide();
-
   $('#toggleTweet').click(function() {
     $('section.new-tweet').slideToggle();
     $('#text-input').focus();
