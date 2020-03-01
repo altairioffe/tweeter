@@ -17,7 +17,13 @@ const createTweetElement = function(tweetObj) {
   const avatar = tweetObj.user.avatars;
   const handle = escape(tweetObj.user.handle);
   const content = escape(tweetObj.content.text);
-  const time = tweetObj.created_at;
+  let time = Math.floor(tweetObj.created_at / 3600000);
+  let units = 'hours';
+
+  if (time > 48) {
+    time = Math.floor(time / 24);
+    units = 'days';
+  }
 
   let $markup = `
 <article class="tweet">
@@ -32,7 +38,7 @@ const createTweetElement = function(tweetObj) {
 </div>
 
 <footer>
-  <p>${time}</p>
+  <p>posted ${time} ${units} ago</p>
   <div> 
   <i class="material-icons">favorite_border</i>
   <i class="material-icons">cached</i>
