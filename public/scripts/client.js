@@ -11,11 +11,13 @@ const escape = function(str) {
 };
 
 const createTweetElement = function(tweetObj) {
+  console.log(tweetObj)
   const displayName = escape(tweetObj.user.name);
-  const avatar = tweetObj.user.avatar;
+  const avatar = tweetObj.user.avatars;
   const handle = escape(tweetObj.user.handle);
   const content = escape(tweetObj.content.text);
   const time = tweetObj.created_at;
+  const convertedDate = new Date(time)
 
   let $markup = ` <article class="tweet">
 <header>
@@ -50,17 +52,20 @@ const renderTweets = function(tweetsArray) {
   }
 };
 
+// const addShadow = function() {
+//   const $tweetBox = $('.tweet');
+
+//   $tweetBox.on('mouseover', function() {
+//     $(this).css('box-shadow', '10px 10px')
+//   })
+
+//   $tweetBox.on('mouseleave', function() {
+//     $(this).css('box-shadow', 'none');
+//   })
+// }
+
 
 $(document).ready(() => {
-  const $tweetBox = $('.tweet');
-
-  $tweetBox.on('mouseover', function() {
-    $tweetBox.css('box-shadow', '20px 20px')
-  })
-
-  $tweetBox.on('mouseleave', function() {
-    $tweetBox.css('box-shadow', 'none');
-  })
 
   const $submitTweet = $('.submit-tweet');
 
@@ -68,7 +73,7 @@ $(document).ready(() => {
     event.preventDefault();
 
     if ($('#text-input').val().length === 0) {
-       
+
       $('#text-input').attr('placeholder', 'WRITE SOMETHING');
       $('#text-input').click(function() {
         $('#text-input').attr('placeholder', 'What are you humming about?')
@@ -81,7 +86,7 @@ $(document).ready(() => {
       $('#text-input').click(function() {
         $('.new-tweet h2').text('Compose Tweet').css("color", "lavender");
       })
-      return 
+      return
     }
 
     let $textInput = $('#text-input').serialize();
@@ -92,7 +97,9 @@ $(document).ready(() => {
       data: $textInput,
     })
       .then(loadTweets())
-      .then($('#text-input').val(''));
+      .then(addShadow())
+      .then($('#text-input').val(''))
+      .then($('#counter').text(140))
 
   })
 
@@ -104,7 +111,7 @@ $(document).ready(() => {
 
   $('section.new-tweet').hide();
 
-  $('#toggleTweet').click(function(){
+  $('#toggleTweet').click(function() {
     $('section.new-tweet').slideToggle();
     $('#text-input').focus();
   })

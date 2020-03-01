@@ -18,5 +18,9 @@ $(document).ready(() => {
       $counter.css("color", "red");
     } else $counter.css("color", "lavender");
   })
+
+  
+
+
 })
 

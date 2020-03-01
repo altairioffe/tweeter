@@ -1,16 +1,22 @@
-header {
-text-align: center;
-background-color: rgb(237, 240, 30);
-height: 350px;
-padding-bottom: 0;
+header.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+background-color: rgb(253, 253, 149);
+height: 420px;
+width: 100%;
+padding: 200px auto 20px;
 }
 
 #avatar {
 transform: scale(0.8);
-padding-top: 1em;
+margin-top: 6em;
 }
 
-#avatar-name {
+#avatar-name h2{
 color: black;
-margin-top: -2em;
+position: relative;
+margin: 0px;
+bottom: 20px;
 }

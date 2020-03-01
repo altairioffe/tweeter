@@ -1,26 +1,30 @@
 nav { 
   font-family: 'Candal', sans-serif;
-  font-size: 2em;
   color: lavender ;
-  height: 100px;
-  background-color: rgb(65, 133, 189);
-  position: -webkit-sticky;
-  position: sticky;
+  height: 11%;
+  width: 100%;
+  background-color: rgb(119, 153, 204);
+  position: fixed;
   top: 0%;
+  padding: 25px;
   z-index: 10;
 }
 
 .nav {
+  font-size: 3em;
   position: fixed;
-  top: 15px;
-  left: 1em;
-
+  margin: 0.3em;
 }
 
 nav button {
   float: right;
-  height: 60px;
-  margin: 20px;
-  font-size: 0.5em;
-  border-radius: 10px;
+  font-size: 2em;
+  height: 2em;
+  margin: 0.5em;
+  padding: 20px;
+  border-radius: 20px;
 }
+
+@media only screen and (max-width: 768px) {}
+
+@media only screen and (min-width: 1024px) {}
