@@ -6,25 +6,38 @@ nav {
   background-color: rgb(119, 153, 204);
   position: fixed;
   top: 0%;
-  padding: 25px;
+  padding: 20px;
   z-index: 10;
 }
 
 .nav {
-  font-size: 3em;
+  font-size: 2rem;
   position: fixed;
-  margin: 0.3em;
 }
+
+nav button {
+  float: right;
+  background-color: lavender;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  height: 2em;
+  width: 6em;
+  padding: 4px;
+  border-radius: 15px;
+  border-width: 0px;
+}
+
+
+@media only screen and (min-width: 768px) {
 
 nav button {
   float: right;
   font-size: 2em;
   height: 2em;
-  margin: 0.5em;
+  margin: 0.1em;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 80px;
 }
-
-@media only screen and (max-width: 768px) {}
+}
 
 @media only screen and (min-width: 1024px) {}
