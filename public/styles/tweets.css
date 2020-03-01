@@ -11,17 +11,19 @@
 .tweet {
   width: 100%;
   margin: 1rem auto;
-  border: 4px;
-  border-style: dotted;
+  border: 1px;
+  border-style: ridge;
   border-radius: 20px;
 }
 
 .tweet header {
-  flex-direction: row;
+flex-direction: row;
 background-color: rgb(253, 253, 149);
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
 top: 0px;
 height: 120px;
-padding: 10px 30px 5px;
+padding: 10px 20px 5px;
 }
 
 .tweet img {
@@ -36,13 +38,15 @@ padding: 10px 30px 5px;
 
 .display-name {
   float: right;
-  margin-top: 5px;
+  margin: 5px 5px 5px 30px;
 }
 
 .display-handle {
 float: right;
-margin: 0px;
+position: relative;
+margin: 5px;
 font-weight: 300;
+bottom: 1px;
 }
 
 div.tweet-content {
@@ -64,6 +68,8 @@ div.tweet-content {
   position: relative;
   background-color: lavender;
   bottom: 0em;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   padding: 2px 10px 0px;
   height: 4rem;
 }
@@ -85,5 +91,5 @@ article {
 }
 
 .tweet:hover {
-  box-shadow: 10px 10px;
+  box-shadow: 0px 50px 30px 0px rgba(0,0,0,0.3);
 }

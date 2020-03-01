@@ -1,7 +1,7 @@
 nav { 
   font-family: 'Candal', sans-serif;
   color: lavender ;
-  height: 11%;
+  height: 4em;
   width: 100%;
   background-color: rgb(119, 153, 204);
   position: fixed;
@@ -30,12 +30,15 @@ nav button {
 
 @media only screen and (min-width: 768px) {
 
-nav button {
-  float: right;
+.nav {
   font-size: 2em;
-  height: 2em;
+  position: fixed;
+}
+
+nav button {
+  font-size: 2rem;
   margin: 0.1em;
-  padding: 20px;
+  padding: 10px;
   border-radius: 80px;
 }
 }

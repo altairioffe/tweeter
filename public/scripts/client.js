@@ -13,7 +13,6 @@ const escape = function(str) {
 
 // Creates a new tweet
 const createTweetElement = function(tweetObj) {
-  console.log(tweetObj)
   const displayName = escape(tweetObj.user.name);
   const avatar = tweetObj.user.avatars;
   const handle = escape(tweetObj.user.handle);
@@ -65,9 +64,9 @@ $(document).ready(() => {
     if ($('#text-input').val().length === 0) {
       $('#text-input').attr('placeholder', 'WRITE SOMETHING');
       $('#text-input').click(function() {
-        $('#text-input').attr('placeholder', 'What are you humming about?')
+        $('#text-input').attr('placeholder', 'What are you humming about?');
       })
-      return
+      return;
     }
 // ERROR Message for long tweet:
     if ($('#text-input').val().length > 140) {
@@ -75,8 +74,8 @@ $(document).ready(() => {
 
       $('#text-input').click(function() {
         $('.new-tweet h2').text('Compose Tweet').css("color", "lavender");
-      })
-      return
+      });
+      return;
     }
 
     // POSTS new tweet & resets input form:
@@ -91,7 +90,6 @@ $(document).ready(() => {
       .then(addShadow())
       .then($('#text-input').val(''))
       .then($('#counter').text(140))
-
   })
 
   const loadTweets = function() {
@@ -106,5 +104,4 @@ $(document).ready(() => {
     $('section.new-tweet').slideToggle();
     $('#text-input').focus();
   })
-
 })
