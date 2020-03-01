@@ -32,7 +32,7 @@ padding-left: 0.5em;
 
 }
 #counter {
-  color: lavender;
+  color:  rgb(65, 133, 189);
   background-color: rgb(171, 211, 248);
   text-align: center;
   width: 3em;
@@ -47,7 +47,7 @@ padding-left: 0.5em;
 .new-tweet textarea {
   height: 3em;
   width: 75%;
-  background-color: lavender;
+  background-color: white;
   border-bottom: 2px solid black;
   padding: 0.4em;
   position: absolute;
