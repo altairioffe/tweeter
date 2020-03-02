@@ -80,20 +80,14 @@ div.tweet-content {
   }
 
 .tweet:hover footer i {
-display: inline;
-float: right;
-font-size: 1em;
-margin: 1rem 0.5rem;
+  display: inline;
+  float: right;
+  font-size: 1em;
+  margin: 1rem 0.5rem;
 }
 
 .tweet footer i:hover {
   color: red;
-}
-
-.tweet footer i:checked {
-  background-color: red;
-  border-radius: 50%;
-  fill: red;
 }
 
 .tweet footer p {
@@ -102,7 +96,6 @@ margin: 1rem 0.5rem;
   font-size: 1rem;
   margin: 1rem;
 }
-
 
 .tweet:hover {
   box-shadow: 0px 20px 20px 10px rgba(201, 200, 200, 0.2);
