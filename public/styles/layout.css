@@ -30,8 +30,16 @@ background-color:#321325;
 width: 100%;
 }
 
-
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ @media only screen and (min-width: 1024px) {
+
+  main {
+    position: relative;
+    width: 50%;
+    float: right;
+    top: 140px;
+  }
+}

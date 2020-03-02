@@ -1,9 +1,10 @@
 header.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 background-color: #5F0F40;
+background: url(/images/foggy-birds.png);
 height: 400px;
 width: 100%;
 padding: 200px auto 20px;
@@ -19,4 +20,13 @@ color: white;
 position: relative;
 margin: 0px;
 bottom: 20px;
+}
+
+@media only screen and (min-width: 1024px) {
+
+header.hero {
+    width: 50%;
+    height: 100%;
+    position: fixed;
+}
 }
