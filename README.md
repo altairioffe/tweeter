@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-Starter code was forked and cloned from [Lighthouse Labs](https://github.com/lighthouse-labs/tweeter), then built out it using HTML, CSS, JS, jQuery and AJAX on the front-end skills, and Node, Express and MongoDB for the back-end.
+Starter code was forked and cloned from [Lighthouse Labs](https://github.com/lighthouse-labs/tweeter), then built out using HTML, CSS, JS, jQuery and AJAX on the front-end, and Node, Express and MongoDB for the back-end.
 
 
 
