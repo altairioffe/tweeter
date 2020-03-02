@@ -17,18 +17,16 @@ html {
 body {
   color: #545149;
   display:vflex;
-  background-color: lavender;
+  background-color: #321325;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
   width: 100%;
-  height: 2000px;
   z-index: -1;
 
 } 
 
 main {
-background-color:lavender;
-height: 800px;
+background-color:#321325;
 width: 100%;
 }
 

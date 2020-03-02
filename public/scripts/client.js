@@ -17,13 +17,9 @@ const createTweetElement = function(tweetObj) {
   const avatar = tweetObj.user.avatars;
   const handle = escape(tweetObj.user.handle);
   const content = escape(tweetObj.content.text);
-  let time = Math.floor(tweetObj.created_at / 3600000);
-  let units = 'hours';
-
-  if (time > 48) {
-    time = Math.floor(time / 24);
-    units = 'days';
-  }
+  const currentTime = Date.now();
+  console.log(currentTime);
+  let time = currentTime - tweetObj.created_at;
 
   let $markup = `
 <article class="tweet">
@@ -38,7 +34,7 @@ const createTweetElement = function(tweetObj) {
 </div>
 
 <footer>
-  <p>posted ${time} ${units} ago</p>
+  <p>${time} milliseconds ago</p>
   <div> 
   <i class="material-icons">favorite_border</i>
   <i class="material-icons">cached</i>
@@ -56,7 +52,6 @@ const renderNewTweet = function(tweet) {
 }
 
 const renderTweets = function(tweetsArray) {
-
   for (let tweet of tweetsArray) {
     renderNewTweet(tweet);
   }
@@ -70,7 +65,7 @@ $(document).ready(() => {
 
     event.preventDefault();
 
-// ERROR Message for empty tweet:
+    // ERROR Message for empty tweet:
     if ($('#text-input').val().length === 0) {
       $('#text-input').attr('placeholder', 'WRITE SOMETHING');
       $('#text-input').click(function() {
@@ -78,7 +73,7 @@ $(document).ready(() => {
       })
       return;
     }
-// ERROR Message for long tweet:
+    // ERROR Message for long tweet:
     if ($('#text-input').val().length > 140) {
       $('.new-tweet h2').text('TOO MANY CHARACTERS').css("color", "red");
 
@@ -108,7 +103,7 @@ $(document).ready(() => {
 
   const loadNewTweet = function() {
     $.ajax('http://localhost:8080/tweets', { method: 'GET' })
-    .then((result) => renderNewTweet(result[result.length-1]))
+      .then((result) => renderNewTweet(result[result.length-1]))
   }
 
   loadTweets();

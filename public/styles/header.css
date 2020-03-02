@@ -3,7 +3,7 @@ header.hero {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-background-color: rgb(253, 253, 149);
+background-color: #5F0F40;
 height: 400px;
 width: 100%;
 padding: 200px auto 20px;
@@ -15,7 +15,7 @@ margin-top: 4em;
 }
 
 #avatar-name h2{
-color: black;
+color: white;
 position: relative;
 margin: 0px;
 bottom: 20px;
