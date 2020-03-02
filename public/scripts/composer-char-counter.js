@@ -1,8 +1,7 @@
 $(document).ready(() => {
 
   const $textField = $('#text-input');
-  let $counter = $('#counter')
-
+  let $counter = $('#counter');
   let counter = 140;
 
   $textField.on('keydown', function(x) {
@@ -18,9 +17,5 @@ $(document).ready(() => {
       $counter.css("color", "red");
     } else $counter.css("color", "#321325");
   })
-
-  
-
-
-})
+});
 

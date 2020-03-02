@@ -1,17 +1,11 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-// Escape function for user input
+// Escape function for user input:
 const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-// Creates a new tweet
+// Creates a new tweet:
 const createTweetElement = function(tweetObj) {
   const displayName = escape(tweetObj.user.name);
   const avatar = tweetObj.user.avatars;
@@ -94,17 +88,17 @@ $(document).ready(() => {
       .then(loadNewTweet())
       .then($('#text-input').val(''))
       .then($('#counter').text(140))
-  })
+  });
 
   const loadTweets = function() {
     $.ajax('http://localhost:8080/tweets', { method: 'GET' })
       .then((result) => renderTweets(result))
-  }
+  };
 
   const loadNewTweet = function() {
     $.ajax('http://localhost:8080/tweets', { method: 'GET' })
       .then((result) => renderNewTweet(result[result.length-1]))
-  }
+  };
 
   loadTweets();
 
@@ -113,5 +107,5 @@ $(document).ready(() => {
   $('#toggleTweet').click(function() {
     $('section.new-tweet').slideToggle();
     $('#text-input').focus();
-  })
-})
+  });
+});
