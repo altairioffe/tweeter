@@ -50,11 +50,15 @@ const createTweetElement = function(tweetObj) {
   return $markup;
 };
 
+const renderNewTweet = function(tweet) {
+  const $tweet = createTweetElement(tweet);
+  $('.tweet-container').prepend($tweet);
+}
+
 const renderTweets = function(tweetsArray) {
 
   for (let tweet of tweetsArray) {
-    const $tweet = createTweetElement(tweet);
-    $('.tweet-container').prepend($tweet);
+    renderNewTweet(tweet);
   }
 };
 
@@ -92,8 +96,7 @@ $(document).ready(() => {
       url: "/tweets",
       data: $textInput,
     })
-      .then(loadTweets())
-      .then(addShadow())
+      .then(loadNewTweet())
       .then($('#text-input').val(''))
       .then($('#counter').text(140))
   })
@@ -102,6 +105,12 @@ $(document).ready(() => {
     $.ajax('http://localhost:8080/tweets', { method: 'GET' })
       .then((result) => renderTweets(result))
   }
+
+  const loadNewTweet = function() {
+    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+    .then((result) => renderTweets(result[result.length-1]))
+  }
+
   loadTweets();
 
   //Toggles input form:
