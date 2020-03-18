@@ -64,7 +64,7 @@ const loadNewTweet = function() {
 
 $(document).ready(() => {
 
-  //loadTweets();
+  loadTweets();
   const $submitTweet = $('.submit-tweet');
 
   $submitTweet.click(function(event) {
