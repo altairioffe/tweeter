@@ -12,7 +12,6 @@ const createTweetElement = function(tweetObj) {
   const handle = escape(tweetObj.user.handle);
   const content = escape(tweetObj.content.text);
   const currentTime = Date.now();
-  console.log(currentTime);
   let time = currentTime - tweetObj.created_at;
 
   let $markup = `
@@ -51,8 +50,21 @@ const renderTweets = function(tweetsArray) {
   }
 };
 
+const loadTweets = function() {
+  $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+   .then((result) => renderTweets(result)) 
+};
+
+const loadNewTweet = function() {
+  $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+    .then(function(result) { 
+      console.log(result)
+      renderNewTweet(result[result.length-1])})
+};
+
 $(document).ready(() => {
 
+  //loadTweets();
   const $submitTweet = $('.submit-tweet');
 
   $submitTweet.click(function(event) {
@@ -84,23 +96,13 @@ $(document).ready(() => {
       type: 'POST',
       url: "/tweets",
       data: $textInput,
+      success: loadNewTweet()
     })
-      .then(loadNewTweet())
       .then($('#text-input').val(''))
       .then($('#counter').html(140))
+      //.then(setTimeout(loadNewTweet(), 2000))
   });
 
-  const loadTweets = function() {
-    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
-      .then((result) => renderTweets(result))
-  };
-
-  const loadNewTweet = function() {
-    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
-      .then((result) => renderNewTweet(result[result.length-1]))
-  };
-
-  loadTweets();
 
   //Toggles input form:
   $('section.new-tweet').hide();
