@@ -13,6 +13,9 @@ Starter code was forked and cloned from [Lighthouse Labs](https://github.com/lig
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- Chance
+- Md5
 
 ## Getting Started
 
