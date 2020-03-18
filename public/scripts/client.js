@@ -11,8 +11,8 @@ const createTweetElement = function(tweetObj) {
   const avatar = tweetObj.user.avatars;
   const handle = escape(tweetObj.user.handle);
   const content = escape(tweetObj.content.text);
-  const currentTime = Date.now();
-  let time = currentTime - tweetObj.created_at;
+  const currentTime = new Date();
+  let time = tweetObj.created_at;
 
   let $markup = `
 <article class="tweet">
@@ -27,7 +27,7 @@ const createTweetElement = function(tweetObj) {
 </div>
 
 <footer>
-  <p>${time} milliseconds ago</p>
+  <p>posted ${currentTime.toISOString().slice(0,10)}</p>
   <div> 
   <i class="material-icons">favorite_border</i>
   <i class="material-icons">cached</i>
