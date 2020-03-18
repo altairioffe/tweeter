@@ -1,6 +1,6 @@
-nav { 
-  font-family: 'Candal', sans-serif;
-  color: lavender ;
+nav {
+  font-family: "Candal", sans-serif;
+  color: lavender;
   height: 4em;
   width: 100%;
   background-color: rgb(119, 153, 204);
@@ -29,17 +29,16 @@ nav button {
 }
 
 @media only screen and (min-width: 768px) {
+  .nav {
+    font-size: 2em;
+    position: fixed;
+    margin-top: 0px;
+  }
 
-.nav {
-  font-size: 2em;
-  position: fixed;
-  margin-top: 0px;
-}
-
-nav button {
-  font-size: 1.5rem;
-  margin: 0.1em;
-  padding: 10px;
-  border-radius: 80px;
-}
+  nav button {
+    font-size: 1.5rem;
+    margin: 0.1em;
+    padding: 10px;
+    border-radius: 80px;
+  }
 }

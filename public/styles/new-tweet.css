@@ -1,7 +1,7 @@
 .new-tweet h2 {
-padding-left: 10px;
-color: lavender;
-margin: 5px;
+  padding-left: 10px;
+  color: lavender;
+  margin: 5px;
 }
 
 .new-tweet {
@@ -26,14 +26,13 @@ margin: 5px;
   margin: 0px;
 }
 
-#form-title{
-margin-top: 0.5em;
-padding-top: 0.3em;
-padding-left: 0.5em;
-
+#form-title {
+  margin-top: 0.5em;
+  padding-top: 0.3em;
+  padding-left: 0.5em;
 }
 #counter {
-  color:  #321325;
+  color: #321325;
   background-color: rgb(171, 211, 248);
   text-align: center;
   width: 3em;
@@ -58,27 +57,27 @@ padding-left: 0.5em;
 }
 
 .new-tweet textarea:focus {
-outline: none;
+  outline: none;
 }
 
 .submit-tweet {
-background-color: lavender;
-color:  rgb(65, 133, 189);
-font-size: 1rem;
-font-weight: bold;
-height: 3.8em;
-width: 20%;
-border-radius: 15px;
-border-width: 0px;
-position: absolute;
-bottom: 0.5em;
-right: 0.5em;
+  background-color: lavender;
+  color: rgb(65, 133, 189);
+  font-size: 1rem;
+  font-weight: bold;
+  height: 3.8em;
+  width: 20%;
+  border-radius: 15px;
+  border-width: 0px;
+  position: absolute;
+  bottom: 0.5em;
+  right: 0.5em;
 }
 
 .submit-tweet:focus {
   outline: none;
-  }
+}
 
 .submit-tweet:hover {
   background-color: white;
-  }
+}
