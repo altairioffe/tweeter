@@ -87,7 +87,7 @@ $(document).ready(() => {
     })
       .then(loadNewTweet())
       .then($('#text-input').val(''))
-      .then($('#counter').text(140))
+      .then($('#counter').html(140))
   });
 
   const loadTweets = function() {
